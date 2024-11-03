@@ -1,0 +1,70 @@
+@import "./variables";
+@import "./global";
+@import "./mixin";
+
+header {
+  @include tablet() {
+    justify-content: center;
+  }
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 27px 17px;
+  z-index: 1000;
+  //global scss ten miras alındı
+  @extend .flex;
+  justify-content: space-between;
+  //logo
+  .logo {
+    font-size: 33px;
+    color: $text-color;
+    font-weight: 700;
+    span {
+      color: $main-color;
+    }
+  }
+  //navbar
+  .navbar {
+    @extend .flex;
+    gap: 10px;
+    li {
+      @include laptop() {
+        display: none;
+      }
+      a {
+        color: $text-color;
+        font-size: $p-font;
+        font-weight: 500;
+        margin: 15px 22px;
+        text-transform: uppercase;
+        @extend .transition;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  //right stage
+  .header-right {
+    @extend .flex;
+    a {
+      @include tablet() {
+        display: none;
+      }
+      font-size: 20px;
+      color: $text-color;
+      margin-right: 18px;
+      margin-left: 5px;
+      @extend .transition;
+      &:hover {
+        color: $main-color;
+        transform: translateY(-3px);
+      }
+    }
+    a:nth-child(1) {
+      font-size: $p-font;
+      margin-right: 20px;
+    }
+  }
+}

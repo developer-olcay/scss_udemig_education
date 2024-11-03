@@ -1,0 +1,58 @@
+@import "./global";
+@import "./variables";
+
+footer {
+  padding: 40px;
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 2rem;
+    .footer-box {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      a {
+        color: #979797;
+        margin-bottom: 0.8rem;
+        @extend .transition;
+        &:hover {
+          color: $text-color;
+          transform: translateX(-5px);
+        }
+      }
+    }
+  }
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #202020;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: $text-color;
+  font-size: 20px;
+  @extend .transition;
+
+  &:hover {
+    background-color: $main-color;
+    transform: translateX(-4px);
+  }
+  &:hover i {
+    color: $bg-color;
+  }
+}
+
+.copright {
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  color: #979797;
+  font-size: 15px;
+}

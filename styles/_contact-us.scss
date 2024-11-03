@@ -1,0 +1,52 @@
+@import "./global";
+@import "./veriables.css";
+@import "./mixin";
+
+.contact-us {
+  @extend .flex;
+  @include laptop() {
+    flex-direction: column;
+  }
+  .contact-us-img {
+    @include laptop() {
+      width: 90%;
+    }
+    width: 50%;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+  .contact-us-form {
+    @include laptop() {
+      width: 90%;
+    }
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    label {
+      margin-bottom: 20px;
+    }
+    input,
+    button {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+    button {
+      background-color: #f8a041;
+      font-size: 16px;
+      color: $text-color;
+      margin-top: 20px;
+      @extend .transition;
+      &:hover {
+        background-color: #a48032;
+        color: $bg-color;
+      }
+    }
+  }
+}

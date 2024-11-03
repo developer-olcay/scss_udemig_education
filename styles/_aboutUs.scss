@@ -1,0 +1,49 @@
+@import "./variables";
+@import "./mixin";
+
+.about-us {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 9rem;
+  @include tablet() {
+    display: flex;
+    flex-direction: column;
+  }
+  // Resim
+  .about-us-img {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+  // Yazı
+  .about-us-text {
+    @include tablet() {
+      text-align: center;
+    }
+    h5 {
+      font-size: 22px;
+      font-weight: bold;
+      color: $main-color;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: $h2-font;
+      font-weight: 800;
+      line-height: 1.2;
+      color: $text-color;
+      margin-bottom: 25px;
+    }
+    p {
+      font-size: $p-font;
+      color: $gray;
+      font-weight: 500;
+      line-height: 30px;
+      margin-bottom: 35px;
+    }
+  }
+}

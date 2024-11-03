@@ -1,0 +1,53 @@
+@import "./variables";
+@import "./mixin";
+
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../images/group.jpeg");
+  background-size: cover;
+  background-position: bottom center;
+
+  .home-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h5 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      color: $main-color;
+    }
+    h1 {
+      font-size: $h1-font;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      @include tablet() {
+        font-size: 3rem;
+        line-height: 80px;
+      }
+    }
+    p {
+      font-size: $p-font;
+      font-weight: 500;
+      line-height: 30px;
+      margin-bottom: 35px;
+      color: $gray;
+    }
+    .btn {
+      @include tablet() {
+        padding: 10px 15px;
+      }
+    }
+  }
+}
